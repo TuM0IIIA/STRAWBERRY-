@@ -14,7 +14,7 @@ there are several pages with goods:
 -catalogue (products)
 -single product review (single_product)
 
-website is creeaeted to show the product to the customers
+website is created to show the product to the customers
 and riderect the customer to the messendger
 
 Why we didn't implement the cart and payment -
