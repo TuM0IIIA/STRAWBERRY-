@@ -1,0 +1,58 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block title %}
+    Kraft - shop
+{% endblock title %}
+
+{% block container %}
+
+
+<!-- Banner Starts Here -->
+<div class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="caption">
+          <h2>DEAR GUESTS! / ДОРОГИЕ ГОСТИ !</h2>
+          <div class="line-dec"></div>
+          <p>This website has been created as a final project of the <a rel="nofollow" href="https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/home">CS50 P course</a>.  Nevertheless, our store is active and you can still place an order. / Этот сайт был создан как финальный проект по <a rel="nofollow" href="https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/home">CS50 P курсу</a>. Тем не менее, наш магазин активен и вы можете оформить заказ.</p>
+          <div class="main-button">
+            <a href="https://vk.com/flowerbar_kraft_vlg">Order Now! / Заказать сейчас !</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Banner Ends Here -->
+<!-- Featured Starts Here -->
+<div class="featured-items">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <div class="line-dec"></div>
+          <h1>Популярные товары</h1>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="owl-carousel owl-theme">
+          {%for val in shop_index%}
+            {%if val.availablility%}
+            <a href="{% url 'single_product' %}">
+              <div class="featured-item">
+                <img src="{{ val.image_item.url }}" alt="">
+                <h4>{{val.name}}</h4>
+                <h6>Price: {{val.price}} ₽</h6>
+              </div>
+            </a>
+            {%endif%}
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Featred Ends Here -->
+{% endblock container %}

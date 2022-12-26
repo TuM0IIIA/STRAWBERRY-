@@ -1,0 +1,41 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block title %}
+    Kraft - About us
+{% endblock title %}
+
+{% block container %}
+
+<!-- About Page Starts Here -->
+<div class="about-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <div class="line-dec"></div>
+          <h1>О НАС</h1>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="left-image">
+          <img src="{% static '/images/about_us.jpg' %}" alt="">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="right-content">
+          <h4>Крафт волгоград </h4>
+          <p><a href="https://vk.com/flowerbar_kraft_vlg">Наша команда </a>создает невероятные букеты для Вас уже более трех лет. Мы выработали систему отбора ингредиентов и наладили каналы поставки. </p>
+          <p>Наши флористы создают произведения искусства, вкладывая в процесс изготовления свой многолетний опыт и  душу. Благодаря скрупулёзной работе профессионалов своего дела наши композиции смогут удивить и произвести впечатление.</p>
+          <br>
+          <p><a rel="nofollow" href="https://vk.com/market-174644045?section=album_3"> Наш каталог </a> вы всегда можете просмотреть в <a rel="nofollow" href="https://vk.com/market-174644045?section=album_3">VK. </a>Мы постарались решить вопрос "что подарить любимым и дорогим людям". Спасибо Вам, что все эти годы Вы доверяете нам.</p>
+          <div class="share">
+            <h6>Встретимся в VK<span><a href="https://vk.com/flowerbar_kraft_vlg"><i class="fa fa-vk"></i></a></span></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- About Page Ends Here -->
+{% endblock container %}

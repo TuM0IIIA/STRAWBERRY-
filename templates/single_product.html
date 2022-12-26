@@ -1,0 +1,119 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block title %}
+    Kraft - products
+{% endblock title %}
+
+{% block container %}
+<!-- Start Here -->
+<div class="single-product">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <div class="line-dec"></div>
+          <h1>Карточка товара</h1>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="product-slider">
+          <div id="slider" class="flexslider">
+            <ul class="slides">
+              {%for val in product_single%}
+                {%if val.availablility%}
+                  <li>
+                    <img src="{{ val.image_big.url }}" />
+                  </li>
+                {%endif%}
+              {%endfor%}
+              <!-- split block -->
+            </ul>
+          </div>
+          <div id="carousel" class="flexslider">
+            <ul class="slides">
+              {%for val in product_single%}
+                {%if val.availablility%}
+                  <li>
+                    <img src="{{ val.image_thumb.url }}" />
+                  </li>
+                {%endif%}
+              {%endfor%}
+              {%for val in product_single%}
+                {%if val.availablility%}
+                  <li>
+                    <img src="{{ val.image_thumb.url }}" />
+                  </li>
+                {%endif%}
+              {%endfor%}
+              {%for val in product_single%}
+                {%if val.availablility%}
+                  <li>
+                    <img src="{{ val.image_thumb.url }}" />
+                  </li>
+                {%endif%}
+              {%endfor%}
+              <!-- split block -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="right-content">
+          <h4>Название</h4>
+          <h6>Цена</h6>
+          <p>Состав букета может быть изменен согласно Вашим пожеланиям. Цвет упаковки, цвет шоколада и посыпки меняются на Ваше усмотение. Вы можете добавить открытки или записки к подарку.</p>
+          <span>Количество в наличии</span>
+          <form action="" method="get">
+            <label for="quantity">Количество:</label>
+            <input name="quantity" type="quantity" class="quantity-text" id="quantity"
+              onfocus="if(this.value == '1') { this.value = ''; }"
+                onBlur="if(this.value == '') { this.value = '1';}"
+                value="1">
+            <input type="submit" class="button" value="ЗАКАЗАТЬ СЕЙЧАС">
+          </form>
+          <div class="down-content">
+            <div class="categories">
+              <h6>Категория: <span><a href="{% url 'bouquets' %}">Букеты</a>,<a href="{% url 'boxes' %}">Коробочки</a>,<a href="{% url 'big_box' %}">Боксы</a></span></h6>
+            </div>
+            <div class="share">
+              <h6>Поделиться: <span><a href="https://vk.com/flowerbar_kraft_vlg"><i class="fa fa-vk"></i></a></span></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page End -->
+
+<!-- Similar Starts Here -->
+<div class="featured-items"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <div class="line-dec"></div>
+          <h1>Вам может понравится</h1>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="owl-carousel owl-theme">
+          {%for val in product_single%}
+          {%if val.availablility%}
+          <a href="{% url 'single_product' %}">
+            <div class="featured-item">
+              <img src="{{ val.image_item.url }}" alt="Item 1">
+              <h4>{{val.name}}</h4>
+              <h6>Price: {{val.price}} ₽</h6>
+            </div>
+          </a>
+          {%endif%}
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Similar Ends Here -->
+{% endblock container %}
