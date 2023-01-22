@@ -2,7 +2,7 @@
     ## Video Demo:  https://www.youtube.com/watch?v=XDaqZDbdWM4
     ### To run use project.py
     
-    This file triggers either server startup or start of the test set by user choice
+    This file triggers either SERVER startup or start of the TEST set by user choice
    
 
 Use python project.py
@@ -15,7 +15,7 @@ there are several pages with goods:
 -single product review (single_product)
 
 website is created to show the product to the customers
-and riderect the customer to the messendger
+and riderect the customer to the messenger
 
 Why we didn't implement the cart and payment -
 due to the legislation it is more cheap if the client will transfer the money from card to card
